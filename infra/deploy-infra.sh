@@ -8,11 +8,6 @@ region='us-east-1'
 export AWS_DEFAULT_REGION=$region
 export AWS_REGION=$region
 
-hosted_zone_domain='mkoelle.com'
-hosted_zone_export_key='mkoelle-com-id'
-dev_hosted_zone_domain="shadow.${hosted_zone_domain}"
-dev_hosted_zone_export_key="shadow-${hosted_zone_export_key}"
-
 set -x
 
 hosted_zone_id=$(aws cloudformation list-exports --query "Exports[?Name=='${hosted_zone_export_key}'].Value" --output text)
