@@ -2,7 +2,7 @@ name: Deploy Infra
 on:
   push:
     paths:
-      - 'infra/**/*'
+      - 'infra/**'
 
 jobs:
   deploy:
@@ -24,4 +24,5 @@ jobs:
 
       - name: Copy files to the test website with the AWS CLI
         run: |
+          cd infra
           ./infra/deploy-infra.ps1
