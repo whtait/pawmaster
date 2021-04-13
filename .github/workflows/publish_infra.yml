@@ -1,8 +1,8 @@
-name: GitHub Actions Demo
+name: Deploy Infra
 on:
   push:
-    path:
-      - 'infra'
+    paths:
+      - 'infra/**/*'
 
 jobs:
   deploy:
